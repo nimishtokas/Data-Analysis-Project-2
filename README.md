@@ -1,54 +1,81 @@
-# Data-Analysis-Project-2
-Project Overview: BLINKIT Dashboard
-1. Why This Project Was Made (Motivation)
-The need for a data-driven approach to understanding Blinkit’s performance.
+# 🛒 BlinkIT Grocery Sales Forecasting & Dashboard Analysis
+This project involves analyzing and predicting sales patterns for an Indian online grocery retailer, BlinkIT, using a combination of exploratory data analysis (EDA), machine learning, and interactive Power BI dashboards.
 
-Analyze operational efficiency, sales trends, customer behavior, and delivery performance.
+📌 Project Objective
 
-Identify key challenges and opportunities for business growth.
+To analyze historical sales data and build a robust machine learning model that predicts product-level sales across different store types and item categories. The project also includes the creation of a Power BI dashboard for interactive business insights.
 
-2. Main Objectives
-Sales & Revenue Analysis: Track revenue trends and identify top-performing products.
+🎯 Key Tasks
 
-Customer Insights: Understand order patterns, customer preferences, and retention rates.
+- Data cleaning and preprocessing of raw BlinkIT grocery dataset
 
-Delivery Performance: Measure average delivery time, efficiency, and delays.
+- Exploratory data analysis (EDA) to understand key sales drivers
 
-Operational Optimization: Identify areas where processes can be improved to enhance profitability.
+- Feature engineering and transformation
 
-3. Steps Involved in Making This Project
-Step 1: Data Collection
-Gather data from Blinkit’s databases, including sales, customer orders, and delivery logs.
+- Model building using Random Forest and GridSearchCV for hyperparameter tuning
 
-Ensure data accuracy and completeness.
+- Model evaluation using R² score and RMSE
 
-Step 2: Data Processing & Cleaning
-Remove duplicates, handle missing values, and standardize formats.
+- Visualization of actual vs. predicted sales
 
-Create calculated fields for deeper insights (e.g., revenue per customer, average delivery time).
+- Business insight reporting via Power BI dashboard
 
-Step 3: Building Dashboards & Visualizations
-Create sales dashboards with revenue trends and product performance.
+🧪 Steps Taken
 
-Develop customer analytics visuals to track retention and purchasing behavior.
+1. Data Cleaning
+- Imputed missing values in Item Weight
 
-Build operational dashboards to monitor delivery times and logistics efficiency.
+- Standardized inconsistent values in Item Fat Content
 
-Step 4: Insights & Analysis
-Identify peak sales periods and underperforming products.
+- Dropped irrelevant or redundant columns (e.g., Rating)
 
-Analyze delivery efficiency and areas causing delays.
+2. Feature Engineering
+- Created outlet age from Outlet Establishment Year
 
-Find correlations between customer satisfaction and operational performance.
+- One-hot encoded categorical variables
 
-Step 5: Decision-Making & Recommendations
-Provide actionable insights to improve sales, reduce delivery delays, and optimize costs.
+- Built interaction features like MRP × Visibility
 
-Suggest strategies for increasing customer engagement and satisfaction.
+3. Modeling
+- Trained a Random Forest Regressor as baseline model
 
-4. Conclusion
-The dashboard provides real-time insights into Blinkit’s operations, helping stakeholders make data-driven decisions.
+- Performed hyperparameter tuning using GridSearchCV
 
-By optimizing delivery times, improving customer engagement, and refining inventory management, Blinkit can enhance overall business performance.
+- Applied log transformation to address skew in target variable
 
-Continuous monitoring and updates to the dashboard will ensure long-term success.
+4. Evaluation
+- R² score plateaued at ~0.55, indicating moderate predictive ability
+
+- Created scatter plots of actual vs. predicted sales
+
+- Identified top features: Item MRP, Outlet Type, Item Visibility
+
+5. Visualization
+- Developed a Power BI dashboard for business users:
+
+- Sales by category and outlet
+
+- Outlet-type performance
+
+- Interactive filters for exploration
+
+📈 Results
+
+- Best-performing model: Tuned Random Forest Regressor
+
+- R² Score: 0.55 — indicating the model captures 55% of sales variability
+
+- Business Insight: Sales are most strongly driven by item pricing and outlet type; however, absence of promotions, stock data, and time series limits predictive accuracy
+
+📚 Conclusion
+
+While the model provides useful insights into sales drivers, its predictive power is constrained by limited feature diversity. Future performance could be enhanced by incorporating:
+
+- Temporal data (week, seasonality)
+
+- Promotion and discount flags
+
+- Inventory availability
+
+- Customer-level segmentation
